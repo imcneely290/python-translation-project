@@ -88,8 +88,11 @@ def get_all_translations(rna_sequence, genetic_code):
         A list of strings; each string is an sequence of amino acids encoded by
         `rna_sequence`.
     """
-    seq_list = []
+
+    list = []
+
     rna_seq2 = rna_sequence.upper()    
+
     start_position = 0
 
     def translate(start_position, rna_seq2, genetic_code):
@@ -105,15 +108,17 @@ def get_all_translations(rna_sequence, genetic_code):
                 break
             else:
                 aa_seq2 += genetic_code[codon]
-        print (aa_seq2)
+            return aa_seq2
 
     while start_position < len(rna_seq2):
         start_codon = rna_seq2[start_position:start_position + 3]
         if start_codon == "AUG":
-            translated_seq = translate(start_position, rna_seq2, genetic_code)
-            seq_list.append(translated_seq)
+            translated_seq = translate(start_position, rna_sequence, genetic_code) 
+#           translated_seq += genetic_code[codon]
+            list.append(translated_seq)
             start_position += 1
-    return seq_list
+
+        return list
 
 
 
