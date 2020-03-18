@@ -119,7 +119,11 @@ def reverse_and_complement(sequence):
     >>> reverse_and_complement('ATGC')
     'GCAT'
     """
-    pass
+    seq4a= sequence.upper()
+    seq4b = seq4a[::-1]
+    
+    trantable4=seq4b.maketrans("ACTGU", "UGACA")
+    return seq4b.translate(trantable4)
 
 def get_longest_peptide(rna_sequence, genetic_code):
     """Get the longest peptide encoded by an RNA sequence.
