@@ -28,7 +28,19 @@ def translate_sequence(rna_sequence, genetic_code):
     str
         A string of the translated amino acids.
     """
-    pass
+
+    seq5 = rna_sequence.upper()
+
+    genetic_code = {'GUC': 'V', 'GUA': 'V', 'GUU': 'V', 'GUG': 'V', 'UAU': 'Y', 'UAC': 'Y', 'UGG': 'W', 
+    'ACG': 'T', 'ACA': 'T', 'ACC': 'T', 'ACU': 'T', 'UCU': 'S', 'UCA': 'S', 'UCC': 'S', 'UCG': 'S', 'AGC': 'S', 'AGU': 'S', 
+    'CCU': 'P', 'CCC': 'P', 'CCA': 'P', 'CCG': 'P', 'UUU': 'F', 'UUC': 'F', 'AUG': 'M', 'AAA': 'K', 'AAG': 'K', 
+    'UUA': 'L', 'UUG': 'L', 'CUU': 'L', 'CUC': 'L', 'CUA': 'L', 'CUG': 'L', 'AUU': 'I', 'AUC': 'I', 'AUA': 'I', 
+    'CAU': 'H', 'CAC': 'H', 'GGG': 'G', 'GGA': 'G', 'GGC': 'G', 'GGU': 'G', 'GAG': 'E', 'GAA': 'E', 
+    'CAA': 'Q', 'CAG': 'Q', 'UGU': 'C', 'UGC': 'C', 'GAC': 'D', 'GAU': 'D', 'AAC': 'N', 'AAU': 'N',
+    'AGG': 'R', 'AGA': 'R', 'CGG': 'R', 'CGU': 'R', 'CGC': 'R', 'CGA': 'R', 'GCG': 'A', 'GCA': 'A', 'GCC': 'A', 'GCU': 'A', 'UGA': '*', 'UAG': '*', 'UAA': '*'} 
+    
+    return seq5.translate(genetic_code)
+
 
 def get_all_translations(rna_sequence, genetic_code):
     """Get a list of all amino acid sequences encoded by an RNA sequence.
