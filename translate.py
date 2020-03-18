@@ -101,7 +101,7 @@ def get_complement(sequence):
     """
     #sequence = input()
     seq3 = sequence.upper()
-    trantable=seq3.maketrans("ACTG", "UGAC")
+    trantable=seq3.maketrans("ACTGU", "UGACA")
     return seq3.translate(trantable)
 
 def reverse_and_complement(sequence):
