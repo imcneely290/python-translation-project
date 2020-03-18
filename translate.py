@@ -100,7 +100,9 @@ def get_complement(sequence):
     'TACG'
     """
     #sequence = input()
-    pass
+    seq3 = sequence.upper()
+    trantable=seq3.maketrans("ACTG", "UGAC")
+    return seq3.translate(trantable)
 
 def reverse_and_complement(sequence):
     """Get the reversed and complemented form of a `sequence` of nucleotides.
