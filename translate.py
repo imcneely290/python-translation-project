@@ -81,7 +81,7 @@ def get_reverse(sequence):
     >>> get_reverse('ATGC')
     'CGTA'
     """
-    sequence = input()
+    #sequence = input()
     seq2 = sequence.upper()
     return(seq2[::-1])
 
@@ -99,6 +99,7 @@ def get_complement(sequence):
     >>> get_reverse('ATGC')
     'TACG'
     """
+    #sequence = input()
     pass
 
 def reverse_and_complement(sequence):
